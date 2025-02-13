@@ -41,8 +41,8 @@ public class SecurityFilter extends OncePerRequestFilter {
 	public static final String TOKEN_PREFIX = "Bearer ";
 	
 	private final Map<String, List<String>> userRoles = ImmutableMap.of(
-	        "admin", new ArrayList<String>(Arrays.asList("ROLE_ADMIN", "ROLE_USER")),
-	        "user", new ArrayList<String>(Arrays.asList("ROLE_USER"))
+	        "ADMIN", new ArrayList<String>(Arrays.asList("ROLE_ADMIN", "ROLE_USER")),
+	        "USER", new ArrayList<String>(Arrays.asList("ROLE_USER"))
 	    );
 
 	@Autowired
@@ -76,7 +76,7 @@ public class SecurityFilter extends OncePerRequestFilter {
             .collect(Collectors.toList());
     	}
         return new UsernamePasswordAuthenticationToken(
-                usernameAuthorities.getUsername(),
+                usernameAuthorities.getUserName(),
                 null,
                 authorities
         );

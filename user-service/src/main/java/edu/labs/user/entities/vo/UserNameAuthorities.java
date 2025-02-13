@@ -10,14 +10,14 @@ import lombok.Setter;
 import java.util.Set;
 
 @AllArgsConstructor
-@EqualsAndHashCode(of = {"username"})
+@EqualsAndHashCode(of = {"userName"})
 @Data
 @NoArgsConstructor
 @Setter 
 @Getter
 public class UserNameAuthorities {
 
-    private String username;
+    private String userName;
     private Set<String> authorities;
 
 }

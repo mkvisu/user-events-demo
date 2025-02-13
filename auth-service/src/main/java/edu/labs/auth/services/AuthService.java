@@ -68,7 +68,7 @@ public class AuthService {
     	UserNameAuthorities auth = new UserNameAuthorities();
     	if(jwtUtil.validateToken(token)) {
     		Claims claims = jwtUtil.getAllClaimsFromToken(token);
-    		auth.setUsername(String.valueOf(claims.get("userName")));
+    		auth.setUserName(String.valueOf(claims.get("userName")));
     		auth.setAuthorities(new HashSet<String>(Arrays.asList(String.valueOf(claims.get("role")))));
     		return auth;
     	}

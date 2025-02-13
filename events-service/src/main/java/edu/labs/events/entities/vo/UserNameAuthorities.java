@@ -13,14 +13,14 @@ import java.util.Set;
  * Class used to receive the authorization information related with logged users
  */
 @AllArgsConstructor
-@EqualsAndHashCode(of = {"username"})
+@EqualsAndHashCode(of = {"userName"})
 @Data
 @NoArgsConstructor
 @Setter 
 @Getter
 public class UserNameAuthorities {
 
-    private String username;
+    private String userName;
     private Set<String> authorities;
 
 }

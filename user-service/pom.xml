@@ -15,6 +15,7 @@
         <java.version>11</java.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
         <jbcrypt.version>0.4</jbcrypt.version>
+        <mapstruct-processor.version>1.5.5.Final</mapstruct-processor.version>
     </properties>
 
 
@@ -33,6 +34,26 @@
 		</dependency>
         
         
+        <dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-envers</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct-processor.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${mapstruct-processor.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+        	<groupId>org.projectlombok</groupId>
+            <artifactId>lombok-mapstruct-binding</artifactId>
+            <version>0.2.0</version>
+        </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
     		<artifactId>postgresql</artifactId>

@@ -40,10 +40,13 @@ public class AuthController {
     
     @PostMapping(value = "/login")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest authrequest){
+    	AuthResponse  authResponse = null;
     	if(authrequest != null) {
-    		return ResponseEntity.ok(authService.login(authrequest));
+    		authResponse = authService.login(authrequest);
+    		if(authResponse == null)
+    			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     	}
-    	return ResponseEntity.badRequest().body(null);
+    	return ResponseEntity.badRequest().body(authResponse);
     }
     
     @GetMapping(value = "/validateToken")
